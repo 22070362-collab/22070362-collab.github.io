@@ -1,0 +1,13 @@
+header h1 { 
+    height: 80px;
+    background-color: gray;
+    color: red;
+    box-shadow: none;
+}
+
+footer p {
+    height: 50px;
+    background-color: darkgray;
+}
+
+:content
