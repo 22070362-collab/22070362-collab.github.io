@@ -45,5 +45,52 @@
             <p>Kỹ năng mềm: làm việc nhóm, giao tiếp, quản lý thời gian.</p>
         </details>
     </ol>
+
+    <!-- Contact Form -->
+    <div class="container">
+    <h2>Contact Form</h2>
+    <p>Điền thông tin liên hệ của bạn để tôi có thể phản hồi sớm nhất</p>
+
+    <form action="#" method="post">
+      <div>
+        <label for="firstname">Họ</label>
+        <input type="text" id="firstname" name="firstname" placeholder="Nguyễn" required>
+      </div>
+
+      <div>
+        <label for="lastname">Tên</label>
+        <input type="text" id="lastname" name="lastname" placeholder="An" required>
+      </div>
+
+      <div>
+        <label for="email">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="ban@example.com" required>
+      </div>
+
+      <div>
+        <label for="phone">Số điện thoại</label>
+        <input type="tel" id="phone" name="phone" placeholder="0900 000 000">
+      </div>
+
+      <div class="full">
+        <label for="position">Vị trí / Lý do liên hệ</label>
+        <select id="position" name="position">
+          <option value="">-- Chọn mục đích --</option>
+          <option value="job_offer">Đề nghị công việc</option>
+          <option value="collaboration">Hợp tác dự án</option>
+          <option value="networking">Kết nối chuyên môn</option>
+          <option value="other">Khác</option>
+        </select>
+      </div>
+
+      <div class="full">
+        <label for="message">Nội dung tin nhắn</label>
+        <textarea id="message" name="message" rows="5" placeholder="Viết lời nhắn tại đây..." required></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Gửi thông tin</button>
+    </form>
+</div>
+
 </body>
 </html>
