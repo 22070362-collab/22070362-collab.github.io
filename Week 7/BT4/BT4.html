@@ -1,1 +1,71 @@
- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gradient Menu Example</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 30px;
+    }
+
+    /* Menu container */
+    .menu {
+      width: 250px;
+      border: 2px solid #333;
+      background-color: #fff;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    /* Menu title with gradient text */
+    .menu-title {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      padding: 15px 0;
+      background: linear-gradient(90deg, #ff6600, #ffcc00);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Menu list */
+    ul {
+      list-style-type: disc; /* adds bullet */
+      margin: 0;
+      padding: 0 30px;
+    }
+
+    /* Menu items */
+    li {
+      padding: 10px 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    /* Hover effect */
+    li:hover {
+      background-color: yellow;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="menu">
+    <div class="menu-title">Main Menu</div>
+    <ul>
+      <li>Home</li>
+      <li>About Us</li>
+      <li>Services</li>
+      <li>Portfolio</li>
+      <li>Contact</li>
+    </ul>
+  </div>
+
+</body>
+</html>
