@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Register New Account</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 400px;
+    }
+    td {
+      padding: 6px;
+    }
+    .title {
+      background-color: #0072bb;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      padding: 8px;
+    }
+    input[type="text"], input[type="password"], textarea, select {
+      width: 100%;
+    }
+    input[type="submit"], input[type="reset"] {
+      width: 80px;
+    }
+  </style>
+</head>
+
+<body>
+  <form name="registerForm" onsubmit="return validateForm()">
+    <table border="1">
+      <tr>
+        <td colspan="2" class="title">REGISTER NEW ACCOUNT</td>
+      </tr>
+      <tr>
+        <td>Username</td>
+        <td><input type="text" name="username"></td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td><input type="password" name="password"></td>
+      </tr>
+      <tr>
+        <td>Confirm password</td>
+        <td><input type="password" name="confirmPassword"></td>
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td>
+          <input type="radio" name="gender" value="Male"> Male
+          <input type="radio" name="gender" value="Female"> Female
+        </td>
+      </tr>
+      <tr>
+        <td>Phone</td>
+        <td><input type="text" name="phone"></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><input type="text" name="email"></td>
+      </tr>
+      <tr>
+        <td>Favourite</td>
+        <td>
+          <input type="checkbox" name="favourite" value="Music"> Music
+          <input type="checkbox" name="favourite" value="Reading"> Reading
+        </td>
+      </tr>
+      <tr>
+        <td>Picture</td>
+        <td><input type="file" name="picture"></td>
+      </tr>
+      <tr>
+        <td>Description</td>
+        <td><textarea name="description" rows="3"></textarea></td>
+      </tr>
+      <tr>
+        <td>Education level</td>
+        <td>
+          <select name="education">
+            <option>Aptech</option>
+            <option>University</option>
+            <option>College</option>
+            <option>High school</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Language</td>
+        <td>
+          <select name="language" multiple size="4">
+            <option>Vietnamese</option>
+            <option>English</option>
+            <option>French</option>
+            <option>Japanese</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <input type="submit" value="Register">
+          <input type="reset" value="Reset">
+        </td>
+      </tr>
+    </table>
+  </form>
+
+  <script>
+    function validateForm() {
+      var email = document.registerForm.email.value;
+      var pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+      if (!email.match(pattern)) {
+        alert("Invalid email address");
+        return false;
+      }
+
+      alert("All register information are correct.");
+      return true;
+    }
+  </script>
+</body>
+</html>
