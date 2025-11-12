@@ -1,97 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #f2f2f2;
+      color: #333;
+    }
+
+    /* HEADER & NAVIGATION */
+    header {
+      background-color: #222;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #00bcd4;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 60px 20px;
+      text-align: center;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    /* ABOUT SECTION */
+    #about img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+
+    /* SKILLS SECTION */
+    .skills-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .skill {
+      background-color: white;
+      padding: 15px 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    /* PROJECTS SECTION */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .project {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .project img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    /* CONTACT FORM */
+    form {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: auto;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #00bcd4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 15px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0097a7;
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-    <h1>CV FORM</h1>
-    <hr>
-    <ol type="1">
-        <li><h3>Thông tin cá nhân</h3></li>
-        <ul type="disc">
-            <li>Họ và tên: Lê Thị Xuân Hào</li>
-            <li>Ngày sinh: 08/01/2004</li>
-            <li>Địa chỉ: Đình Thôn, Nam Từ Liêm, Hà Nội, Việt Nam</li>
-            <li>Điện thoại: 036 855 643</li>
-            <li>Email: haosumi0903@gmail.com</li>
-        </ul>
-        <li><h3>Mục tiêu nghề nghiệp</h3></li>
-        <details>
-            <p>Tôi mong muốn được làm việc trong lĩnh vực Công nghệ thông tin / Tester / Quản trị hệ thống, rèn luyện kỹ năng chuyên môn, tích lũy kinh nghiệm thực tế và đóng góp vào sự phát triển của công ty.</li></p>
-        </details>
-        <li><h3>Học vấn</h3></li>
-        <dl>
-            <dt><b>2022 – 2026: Đại học Quốc gia Hà Nội (IS-VNU)</b></dt>
-            <dd>Ngành: Hệ thống thông tin quản lý</dd>
-        </dl>
-        <li><h3>Kinh nghiệm làm việc (nếu có)</h3></li>
-        <dl>
-            <dt><b>Thực tập sinh Tester – Công ty ABC (06/2023 – 08/2023)</b></dt>
-            <dd>Tham gia kiểm thử phần mềm web/app.</dd>
-            <dd>Viết test case, báo cáo lỗi, phối hợp với developer để khắc phục bug.</dd>
-        </dl>
-        <video controls="controls" width="320">
-            <source src="agustd.mp4" type="video/mp4">
-        </video>
-        <li><h3>Kỹ năng</h3></li>
-        <details>
-            <summary>Some Details</summary>
-            <p>Sử dụng ngôn ngữ Python, SQL cơ bản.</p>
-            <p>Kiến thức về kiểm thử phần mềm (manual testing).</p>
-            <p>Sử dụng công cụ quản lý dự án: Jira, Trello.</p>
-            <p>Tin học văn phòng: Word, Excel, PowerPoint.</p>
-            <p>Kỹ năng mềm: làm việc nhóm, giao tiếp, quản lý thời gian.</p>
-        </details>
-    </ol>
+  <header>
+    <h1>My Portfolio</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Contact Form -->
-    <div class="container">
-    <h2>Contact Form</h2>
-    <p>Điền thông tin liên hệ của bạn để tôi có thể phản hồi sớm nhất</p>
+  <!-- ABOUT -->
+  <section id="about">
+    <img src="https://via.placeholder.com/150" alt="My Photo">
+    <h2>About Me</h2>
+    <p>Hi, I'm <b>John Doe</b>, a passionate web developer who loves creating modern, responsive websites using HTML, CSS, and JavaScript.</p>
+  </section>
 
-    <form action="#" method="post">
-      <div>
-        <label for="firstname">Họ</label>
-        <input type="text" id="firstname" name="firstname" placeholder="Nguyễn" required>
+  <!-- SKILLS -->
+  <section id="skills">
+    <h2>My Skills</h2>
+    <div class="skills-list">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">React</div>
+      <div class="skill">Node.js</div>
+      <div class="skill">WordPress</div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects">
+      <div class="project">
+        <img src="https://via.placeholder.com/300x200" alt="Project 1">
+        <h3>Project 1</h3>
+        <p>Responsive website built with HTML, CSS, and JavaScript.</p>
       </div>
-
-      <div>
-        <label for="lastname">Tên</label>
-        <input type="text" id="lastname" name="lastname" placeholder="An" required>
+      <div class="project">
+        <img src="https://via.placeholder.com/300x200" alt="Project 2">
+        <h3>Project 2</h3>
+        <p>E-commerce web application with dynamic features and API integration.</p>
       </div>
-
-      <div>
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" placeholder="ban@example.com" required>
+      <div class="project">
+        <img src="https://via.placeholder.com/300x200" alt="Project 3">
+        <h3>Project 3</h3>
+        <p>Personal blog developed using WordPress and custom plugins.</p>
       </div>
+    </div>
+  </section>
 
-      <div>
-        <label for="phone">Số điện thoại</label>
-        <input type="tel" id="phone" name="phone" placeholder="0900 000 000">
-      </div>
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form onsubmit="return validateForm()">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Enter your name">
 
-      <div class="full">
-        <label for="position">Vị trí / Lý do liên hệ</label>
-        <select id="position" name="position">
-          <option value="">-- Chọn mục đích --</option>
-          <option value="job_offer">Đề nghị công việc</option>
-          <option value="collaboration">Hợp tác dự án</option>
-          <option value="networking">Kết nối chuyên môn</option>
-          <option value="other">Khác</option>
-        </select>
-      </div>
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email">
 
-      <div class="full">
-        <label for="message">Nội dung tin nhắn</label>
-        <textarea id="message" name="message" rows="5" placeholder="Viết lời nhắn tại đây..." required></textarea>
-      </div>
+      <label for="message">Message</label>
+      <textarea id="message" rows="4" placeholder="Your message..."></textarea>
 
-      <button type="submit" class="submit-btn">Gửi thông tin</button>
+      <button type="submit">Send Message</button>
     </form>
-    
-</div>
+  </section>
 
+  <footer>
+    <p>&copy; 2025 My Portfolio | Designed by John Doe</p>
+  </footer>
+
+  <script>
+    function validateForm() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+      if (name === "" || email === "" || message === "") {
+        alert("Please fill in all fields!");
+        return false;
+      }
+
+      if (!email.match(emailPattern)) {
+        alert("Please enter a valid email address!");
+        return false;
+      }
+
+      alert("Message sent successfully!");
+      return true;
+    }
+  </script>
 </body>
 </html>
