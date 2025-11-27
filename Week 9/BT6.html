@@ -4,43 +4,77 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mini calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    table {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    input, select {
+      padding: 5px;
+      font-size: 16px;
+    }
+    h2 {
+      color: #333;
+    }
+    input[type="button"] {
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    input[type="button"]:hover {
+      background-color: #0056b3;
+    }
+  </style>
   <script>
     function calculate() {
-      // tham chiếu các control
       var a = document.frmCal.txta;
       var b = document.frmCal.txtb;
       var o = document.frmCal.slto;
       var r = document.frmCal.txtr;
 
-      // regex cho số (có dấu thập phân)
       var numberFormat = /^[+-]?\d+(\.\d+)?$/;
 
-      // kiểm tra a
+      if (!a.value.trim()) {
+        alert("Vui lòng nhập số a!");
+        a.focus();
+        return;
+      }
       if (!numberFormat.test(a.value.trim())) {
-        alert("a must be a number!");
+        alert("a phải là số!");
         a.focus();
         return;
       }
 
-      // kiểm tra b
+      if (!b.value.trim()) {
+        alert("Vui lòng nhập số b!");
+        b.focus();
+        return;
+      }
       if (!numberFormat.test(b.value.trim())) {
-        alert("b must be a number!");
+        alert("b phải là số!");
         b.focus();
         return;
       }
 
-      // chuyển về số
       var A = parseFloat(a.value);
       var B = parseFloat(b.value);
 
-      // kiểm tra chia/mod cho 0
       if ((o.value === "/" || o.value === "%") && B === 0) {
-        alert("b can't be 0!");
+        alert("b không được bằng 0!");
         b.focus();
         return;
       }
 
-      // tính toán an toàn (không dùng eval)
       var res;
       switch (o.value) {
         case "+": res = A + B; break;
@@ -48,7 +82,8 @@
         case "*": res = A * B; break;
         case "/": res = A / B; break;
         case "%": res = A % B; break;
-        default: res = "Invalid operator";
+        case "^": res = Math.pow(A, B); break;
+        default: res = "Phép toán không hợp lệ";
       }
 
       r.value = res;
@@ -66,12 +101,12 @@
 
       <tr>
         <td align="right">a =</td>
-        <td><input name="txta" type="text" value="0" /></td>
+        <td><input name="txta" type="text" value="" /></td>
       </tr>
 
       <tr>
         <td align="right">b =</td>
-        <td><input name="txtb" type="text" value="0" /></td>
+        <td><input name="txtb" type="text" value="" /></td>
       </tr>
 
       <tr>
@@ -83,6 +118,7 @@
             <option value="*">*</option>
             <option value="/">/</option>
             <option value="%">%</option>
+            <option value="^">^ (lũy thừa)</option>
           </select>
         </td>
       </tr>
