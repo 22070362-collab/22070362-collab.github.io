@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurant Menu</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .menu-section {
+      width: 50%;
+      margin: 20px auto;
+    }
+
+    li {
+      padding: 6px 0;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2 style="text-align:center;">Restaurant Menu</h2>
+
+  <div class="menu-section">
+    <h3>Appetizers &reg;</h3>
+    <ul>
+      <li class="menu-item vegetarian">Spring Rolls - ≥ $5</li>
+      <li class="menu-item">Chicken Wings - ≥ $7</li>
+    </ul>
+  </div>
+
+  <div class="menu-section">
+    <h3>Main Course §</h3>
+    <ul>
+      <li class="menu-item">Beef Steak - ≥ $15</li>
+      <li class="menu-item vegetarian">Vegetable Pasta - ≥ $10</li>
+    </ul>
+  </div>
+
+  <div class="menu-section">
+    <h3>Desserts</h3>
+    <ul>
+      <li class="menu-item vegetarian">Fruit Salad - ≥ $6</li>
+      <li class="menu-item">Ice Cream - ≥ $5</li>
+    </ul>
+  </div>
+
+  <div class="menu-section">
+    <h3>Drinks</h3>
+    <ul>
+      <li class="menu-item vegetarian">Fresh Juice - ≥ $4</li>
+      <li class="menu-item">Coffee - ≥ $3</li>
+    </ul>
+  </div>
+
+  <button onclick="filterMenu()">Filter Menu</button>
+
+  <script>
+    let vegetarianOnly = false;
+
+    function filterMenu() {
+      const items = document.getElementsByClassName("menu-item");
+      vegetarianOnly = !vegetarianOnly;
+
+      for (let i = 0; i < items.length; i++) {
+        if (vegetarianOnly && !items[i].classList.contains("vegetarian")) {
+          items[i].style.display = "none";
+        } else {
+          items[i].style.display = "list-item";
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>

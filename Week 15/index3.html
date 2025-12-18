@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Grade Calculator</title>
+
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 50%;
+      margin: 20px auto;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 10px;
+      text-align: center;
+    }
+
+    /* MÀU XEN KẼ */
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:nth-child(odd) {
+      background-color: #ffffff;
+    }
+
+    input {
+      width: 60px;
+      padding: 5px;
+      text-align: center;
+    }
+
+    button {
+      display: block;
+      margin: 10px auto;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    #result {
+      text-align: center;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2 style="text-align:center;">
+    Student Grades Calculator &reg;
+  </h2>
+
+  <table id="gradeTable">
+    <tr>
+      <th> Subject</th>
+      <th>Grade (≥ 0)</th>
+    </tr>
+    <tr>
+      <td>Math</td>
+      <td>
+        <input type="number" class="grade" min="0" max="10">
+      </td>
+    </tr>
+    <tr>
+      <td>Physics</td>
+      <td>
+        <input type="number" class="grade" min="0" max="10">
+      </td>
+    </tr>
+    <tr>
+      <td>Chemistry</td>
+      <td>
+        <input type="number" class="grade" min="0" max="10">
+      </td>
+    </tr>
+    <tr>
+      <td>English</td>
+      <td>
+        <input type="number" class="grade" min="0" max="10">
+      </td>
+    </tr>
+  </table>
+
+  <button onclick="calculateAverage()">Calculate Average</button>
+
+  <div id="result"></div>
+
+  <script>
+    function calculateAverage() {
+      const inputs = document.querySelectorAll(".grade");
+      let sum = 0;
+      let count = 0;
+
+      inputs.forEach(function(input) {
+        const value = Number(input.value);
+
+        if (!isNaN(value)) {
+          sum += value;
+          count++;
+        }
+      });
+
+      if (count === 0) {
+        document.getElementById("result").textContent =
+          "Please enter at least one grade.";
+        return;
+      }
+
+      const average = sum / count;
+
+      document.getElementById("result").textContent =
+        "Average Grade: " + average.toFixed(2);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabbed Content</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* TAB BAR */
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      border: 1px solid #333;
+      cursor: pointer;
+      background-color: #eee;
+      margin-right: 5px;
+    }
+
+    .tab.active {
+      background-color: #333;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    /* CONTENT */
+    .tab-content {
+      display: none;
+      text-align: center;
+      border: 1px solid #333;
+      padding: 20px;
+      width: 60%;
+      margin: auto;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- TABS -->
+  <div class="tabs">
+    <div class="tab active" onclick="switchTab(0)">
+      Features &reg; →
+    </div>
+    <div class="tab" onclick="switchTab(1)">
+      Pricing € 
+    </div>
+    <div class="tab" onclick="switchTab(2)">
+      Reviews
+    </div>
+    <div class="tab" onclick="switchTab(3)">
+      Support
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="tab-content active">
+    <h3>Features &reg;</h3>
+    <p>Our product offers powerful and modern features.</p>
+  </div>
+
+  <div class="tab-content">
+    <h3>Pricing €</h3>
+    <p>Flexible pricing plans for all users.</p>
+  </div>
+
+  <div class="tab-content">
+    <h3>Reviews</h3>
+    <p>Customers love our service and support.</p>
+  </div>
+
+  <div class="tab-content">
+    <h3>Support</h3>
+    <p>24/7 customer support available.</p>
+  </div>
+
+  <script>
+    function switchTab(index) {
+      const tabs = document.getElementsByClassName("tab");
+      const contents = document.getElementsByClassName("tab-content");
+
+      for (let i = 0; i < tabs.length; i++) {
+        tabs[i].classList.remove("active");
+        contents[i].classList.remove("active");
+
+        // XÓA MŨI TÊN →
+        tabs[i].innerHTML = tabs[i].innerHTML.replace(" →", "");
+      }
+
+      tabs[index].classList.add("active");
+      contents[index].classList.add("active");
+
+      // THÊM MŨI TÊN → CHO TAB ĐANG ACTIVE
+      tabs[index].innerHTML += " →";
+    }
+  </script>
+
+</body>
+</html>
